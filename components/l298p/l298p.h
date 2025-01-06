@@ -12,7 +12,7 @@ constexpr uint8_t DirectionSet = 0xaa;
 enum class MotorID : uint8_t { MOTOR1 = 1, MOTOR2 = 2 };
 enum class MotorDirection : uint8_t { ClockWise = 0x0a, AntiClockWise = 0x05 };
 
-class L298P : public i2c::I2CDevice, public Component {
+class l298p : public i2c::I2CDevice, public Component {
  public:
   void setup() override;
   void loop() override;
