@@ -1,15 +1,15 @@
 #include "esphome/core/log.h"
 #include "l298p.h"
 
+namespace esphome {
 namespace l298p {
 
 static const char *TAG = "l298p";
 
 void L298P::setup() {
   ESP_LOGI(TAG, "Setting up L298P Motor Controller...");
-  // Initialize motors to stopped state
-  this->set_motor_speed(1, 0);  // Motor 1
-  this->set_motor_speed(2, 0);  // Motor 2
+  this->set_motor_speed(1, 0);  // Ensure Motor 1 is stopped
+  this->set_motor_speed(2, 0);  // Ensure Motor 2 is stopped
 }
 
 void L298P::loop() {
@@ -30,7 +30,8 @@ void L298P::set_motor_direction(uint8_t direction) {
 
 void L298P::stop_motor(uint8_t motor_id) {
   ESP_LOGI(TAG, "Stopping motor %d", motor_id);
-  this->set_motor_speed(motor_id, 0);
+  this->set_motor_speed(motor_id, 0);  // Reuse set_motor_speed to stop the motor
 }
 
 }  // namespace l298p
+}  // namespace esphome
