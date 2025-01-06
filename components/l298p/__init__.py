@@ -11,7 +11,7 @@ L298P = l298p_ns.class_("L298P", cg.Component, i2c.I2CDevice)
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(L298P),
     cv.Optional(CONF_ADDRESS, default=0x0F): cv.i2c_address,  # Default address is 0x0F
-}).extend(i2c.I2C_DEVICE_SCHEMA)
+}).extend(i2c.i2c_device_schema(0x0f))
 
 # Register the component
 async def to_code(config):
