@@ -16,6 +16,6 @@ CONFIG_SCHEMA = cv.Schema({
 # Register the component
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
-    cg.add(var.set_address(config[CONF_ADDRESS]))  # Set the I2C address
+    cg.add(var.set_i2c_address(config[CONF_ADDRESS]))  # Set the I2C address
     await cg.register_component(var, config)
     await i2c.register_i2c_device(var, config)
