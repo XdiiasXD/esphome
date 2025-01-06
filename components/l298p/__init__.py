@@ -10,7 +10,7 @@ L298P = l298p_ns.class_("L298P", cg.Component, i2c.I2CDevice)
 # Define the configuration schema
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(L298P),
-    cv.Required("address"): cv.i2c_address,  # Add I2C address validation
+    cv.Required("0x0f"): cv.i2c_address,  # Add I2C address validation
 }).extend(i2c.I2C_SCHEMA)
 
 # Register the component
