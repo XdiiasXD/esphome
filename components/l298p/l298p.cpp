@@ -10,6 +10,7 @@ void L298P::setup() {
   ESP_LOGI(TAG, "Setting up L298P Motor Controller...");
   this->set_motor_speed(1, 0);  // Ensure Motor 1 is stopped
   this->set_motor_speed(2, 0);  // Ensure Motor 2 is stopped
+  ESP_LOGI(TAG, "Exiting setup for L298P Motor Controller...");
 }
 
 void L298P::loop() {
